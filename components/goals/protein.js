@@ -1,7 +1,7 @@
 import { useState } from "react"
 const Protein = () => {
   const [proteinGoal, setProteinGoal] = useState(134)
-  const [currentProtein, setCurrentProtein] = useState()
+  const [currentProtein, setCurrentProtein] = useState(0)
   const [remainingProtein, setRemainingProtein] = useState()
 
   const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ const Protein = () => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', width: '20vw', alignItems: 'center'}}>
       <h2>Protein Goal: {proteinGoal}g</h2>
       <label>Protein: </label>
       <input 

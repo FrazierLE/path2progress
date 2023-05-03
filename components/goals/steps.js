@@ -1,6 +1,6 @@
 import { useState } from "react"
 const Steps = () => {
-  const [currentSteps, setCurrentSteps] = useState()
+  const [currentSteps, setCurrentSteps] = useState(0)
   const [remainingSteps, setRemainingSteps] = useState()
   const stepGoal = 10000
 
@@ -10,7 +10,7 @@ const Steps = () => {
   }
 
   return(
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', width: '20vw', alignItems: 'center'}}>
       <h2>Daily Steps Goal: 10,000</h2>
       <label>Steps: </label>
       <input 
