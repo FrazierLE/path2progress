@@ -1,16 +1,19 @@
 import Protein from "../components/goals/protein"
 import Water from "../components/goals/water"
 import Steps from "../components/goals/steps"
+import { Container, Box } from "@mui/system"
 
 export default function Goals() {
   return(
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <Container style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <h1>Goals</h1>
-      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '100vw', height: '100vh'}}>
+      <Box 
+        style={{border: '1px solid black', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '70vw', height: '70vh'}}
+      >
         <Protein />
         <Steps />
         <Water />
-      </div>
-    </div>
+      </Box>
+    </Container>
   )
 }
