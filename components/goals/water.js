@@ -3,25 +3,12 @@ import { useState, useRef, useEffect } from "react"
 const Water = () => {
   const waterGoal = 100
   const [currentWaterIntake, setCurrentWaterIntake] = useState('')
-  const [remainingWater, setRemainingWater] = useState(100)
   const [totalConsumed, setTotalConsumed] = useState(0)
-  
-  useEffect(() => {
-    if(currentWaterIntake) {
-      update()
-    }
-  }, [currentWaterIntake])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setRemainingWater((waterGoal - totalConsumed))
+    await setTotalConsumed(totalConsumed + Number(currentWaterIntake))
     clearInput()
-  }
-
-  const update = () => {
-    setTotalConsumed((prevState) => {
-      return prevState + Number(currentWaterIntake)
-    })
   }
 
   const addWater = (e) => {
@@ -34,7 +21,7 @@ const Water = () => {
 
   return(
     <form  onSubmit={(e) => handleSubmit(e)} style={{display: 'flex', flexDirection: 'column', width: '20vw', alignItems: 'center'}}>
-      <h2>Water Goal: {remainingWater}oz</h2>
+      <h2>Water Goal: {100-totalConsumed}oz</h2>
       <label>Water Intake: </label>
       <input 
         type='text'
