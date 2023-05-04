@@ -16,17 +16,19 @@ const Steps = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
+    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '35vw', alignItems: 'center'}}>
     <CardContent 
       component='form'
       noValidate
-      autoComplete="off">
+      autoComplete="off"
+      sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+      >
       <Typography  gutterBottom variant='h2' fontSize='2rem'>
       Daily Steps Goal: {stepGoal - totalSteps}
       </Typography>
       <TextField 
         id="outlined-basic" 
-        label="Protein Intake" 
+        label="Daily Steps" 
         variant="outlined" 
         type='text'
         name='currentSteps'

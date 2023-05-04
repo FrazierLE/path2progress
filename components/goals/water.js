@@ -21,10 +21,10 @@ const Water = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
+    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
       <CardContent 
         component='form'
-        // sx={{display: 'flex', flexDirection: 'column', width: '15vw', alignItems: 'center'}}
+        sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         noValidate
         autoComplete="off">
         <Typography  gutterBottom variant='h2' fontSize='2rem'>

@@ -16,11 +16,13 @@ const Protein = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
+    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
       <CardContent 
         component='form'
         noValidate
-        autoComplete="off">
+        autoComplete="off"
+        sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+        >
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
         Protein Goal: {proteinGoal - totalConsumed}oz
         </Typography>
