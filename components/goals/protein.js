@@ -1,5 +1,22 @@
 import { useState } from "react"
 import { Button, TextField, Card, CardActions, CardContent, Typography } from "@mui/material"
+// import Hydration from '../../assets/Hydration.jpeg'
+
+const styles = {
+  card: {
+    backgroundImage: 'url("https://www.rutgers.edu/sites/default/files/PRMO_lean.protein6.20.22.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    margin: '10px',
+    flexDirection: 'column',
+    width: '30vw',
+    height: '50vh',
+    alignItems: 'center',
+    // color: 'gray'
+  },
+};
+
 const Protein = () => {
   const [proteinGoal, setProteinGoal] = useState(134)
   const [currentProtein, setCurrentProtein] = useState('')
@@ -16,7 +33,7 @@ const Protein = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
+    <Card style={styles.card}>
       <CardContent 
         component='form'
         noValidate
@@ -24,10 +41,10 @@ const Protein = () => {
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         >
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
-        Protein Goal: {proteinGoal - totalConsumed}oz
+        Protein Goal: {proteinGoal - totalConsumed} oz
         </Typography>
         <Typography gutterBottom variant='h2' fontSize='2rem'>
-          Total Protein Intake: {totalConsumed}oz
+          Total Protein Intake: {totalConsumed} oz
         </Typography>
         <TextField 
           id="outlined-basic" 
@@ -43,7 +60,7 @@ const Protein = () => {
         {(totalConsumed > 0 && totalConsumed === proteinGoal) && <h3>Congrats, you have reached your protein goal!</h3>}
         {(totalConsumed > 0 && totalConsumed > proteinGoal) && <h3>What a rockstar! You've exceeded your protein goal.</h3>}
         <CardActions>
-          <Button onClick={(e) => handleSubmit(e)} variant="outlined">Calculate</Button>
+          <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>
         </CardActions>
       </CardContent>
     </Card>

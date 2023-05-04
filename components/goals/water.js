@@ -1,5 +1,20 @@
 import { useState, useRef, useEffect } from "react"
 import { Button, TextField, Card, CardActions, CardContent, Typography } from "@mui/material"
+// import Hydration from '../../assets/Hydration.jpeg'
+
+const styles = {
+  card: {
+    backgroundImage: 'url("https://www.news-medical.net/image.axd?picture=2021%2F7%2Fshutterstock_1548860402.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    margin: '10px',
+    flexDirection: 'column',
+    width: '30vw',
+    height: '50vh',
+    alignItems: 'center'
+  },
+};
 
 const Water = () => {
   const waterGoal = 100
@@ -21,17 +36,17 @@ const Water = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '30vw', alignItems: 'center'}}>
+    <Card sx={styles.card}>
       <CardContent 
         component='form'
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         noValidate
         autoComplete="off">
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
-        Water Goal: 100oz
+        Water Goal: 100 oz
         </Typography>
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
-        Hydration Status: {totalConsumed}oz
+        Hydration Status: {totalConsumed} oz
         </Typography>
         <TextField 
           id="outlined-basic" 
@@ -49,7 +64,7 @@ const Water = () => {
           {(totalConsumed > 0 && totalConsumed > waterGoal) && <h3>Freaking Camel! You've exceeded your water intake goal.</h3>}
           </Typography>
           <CardActions>
-          <Button onClick={(e) => handleSubmit(e)} variant="outlined">Calculate</Button>
+          <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>
         </CardActions>
       </CardContent>
     </Card>

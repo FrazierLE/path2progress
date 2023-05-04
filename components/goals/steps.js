@@ -1,5 +1,20 @@
 import { useState } from "react"
 import { Button, TextField, Card, CardActions, CardContent, Typography } from "@mui/material"
+
+const styles = {
+  card: {
+    backgroundImage: 'url("https://hips.hearstapps.com/hmg-prod/images/feet-walking-1665089039.jpg?crop=1.00xw:0.751xh;0,0.192xh&resize=1200:*")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    margin: '10px',
+    flexDirection: 'column',
+    width: '30vw',
+    height: '50vh',
+    alignItems: 'center'
+  },
+};
+
 const Steps = () => {
   const [currentSteps, setCurrentSteps] = useState('')
   const [totalSteps, setTotalSteps] = useState(0)
@@ -16,7 +31,7 @@ const Steps = () => {
   }
 
   return(
-    <Card sx={{display: 'flex', margin: '10px', flexDirection: 'column', width: '35vw', alignItems: 'center'}}>
+    <Card sx={styles.card}>
     <CardContent 
       component='form'
       noValidate
@@ -45,7 +60,7 @@ const Steps = () => {
           {(totalSteps > 0 && totalSteps > stepGoal) && <h3>What a rockstar! You've exceeded your steps goal.</h3>}
         </Typography>
       <CardActions>
-        <Button onClick={(e) => handleSubmit(e)} variant="outlined">Calculate</Button>
+        <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>
       </CardActions>
     </CardContent>
   </Card>

@@ -10,8 +10,8 @@ export default function Goals() {
       <Box 
         sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '80vh'}}
       >
-        <Protein />
         <Steps />
+        <Protein />
         <Water />
       </Box>
     </Container>
