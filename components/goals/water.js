@@ -28,7 +28,10 @@ const Water = () => {
         noValidate
         autoComplete="off">
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
-        Water Goal: {100-totalConsumed}oz
+        Water Goal: 100oz
+        </Typography>
+        <Typography  gutterBottom variant='h2' fontSize='2rem'>
+        Hydration Status: {totalConsumed}oz
         </Typography>
         <TextField 
           id="outlined-basic" 
@@ -40,11 +43,12 @@ const Water = () => {
           placeholder='Record Water Intake'
           onChange={e => addWater(e)}
           />
-        {/* {remainingWater > 0 && <h3>You have {remainingWater}oz of Water left to reach your goal. Drink up buttercup.</h3>}
-        {remainingWater === 0 && <h3>Congrats, you have reached your water goal! Way to stay hydrated!</h3>}
-      {remainingWater < 0 && <h3>Freaking Camel! You've exceeded your water intake goal.</h3>} */}
-        {/* <Button>Calculate</Button> */}
-        <CardActions>
+          <Typography>
+          {(totalConsumed > 0 && totalConsumed < waterGoal) && <h3>You have {waterGoal-totalConsumed}oz of Water left to reach your goal. Drink up buttercup.</h3>}
+          {(totalConsumed > 0 && totalConsumed === waterGoal) && <h3>Congrats, you have reached your water goal! Way to stay hydrated!</h3>}
+          {(totalConsumed > 0 && totalConsumed > waterGoal) && <h3>Freaking Camel! You've exceeded your water intake goal.</h3>}
+          </Typography>
+          <CardActions>
           <Button onClick={(e) => handleSubmit(e)} variant="outlined">Calculate</Button>
         </CardActions>
       </CardContent>

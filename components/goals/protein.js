@@ -26,6 +26,9 @@ const Protein = () => {
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
         Protein Goal: {proteinGoal - totalConsumed}oz
         </Typography>
+        <Typography gutterBottom variant='h2' fontSize='2rem'>
+          Total Protein Intake: {totalConsumed}oz
+        </Typography>
         <TextField 
           id="outlined-basic" 
           label="Protein Intake" 
@@ -36,9 +39,9 @@ const Protein = () => {
           placeholder='Record Protein Intake'
           onChange={e => setCurrentProtein(e.target.value)}
           />
-        {/* {remainingProtein > 0 && <h3>You have {remainingProtein}g of Protein left to reach your goal.</h3>}
-      //   {remainingProtein === 0 && <h3>Congrats, you have reached your protein goal!</h3>}
-      //   {remainingProtein < 0 && <h3>What a rockstar! You've exceeded your protein goal.</h3>} */}
+        {(totalConsumed > 0 && totalConsumed < proteinGoal) && <h3>You have {proteinGoal-totalConsumed}g of Protein left to reach your goal.</h3>}
+        {(totalConsumed > 0 && totalConsumed === proteinGoal) && <h3>Congrats, you have reached your protein goal!</h3>}
+        {(totalConsumed > 0 && totalConsumed > proteinGoal) && <h3>What a rockstar! You've exceeded your protein goal.</h3>}
         <CardActions>
           <Button onClick={(e) => handleSubmit(e)} variant="outlined">Calculate</Button>
         </CardActions>
