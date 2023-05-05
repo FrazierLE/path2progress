@@ -41,7 +41,7 @@ const Protein = () => {
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         >
         <Typography  gutterBottom variant='h2' fontSize='2rem'>
-        Protein Goal: {proteinGoal - totalConsumed} oz
+        Protein Goal: {proteinGoal} oz
         </Typography>
         <Typography gutterBottom variant='h2' fontSize='2rem'>
           Total Protein Intake: {totalConsumed} oz
