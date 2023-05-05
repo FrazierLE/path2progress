@@ -42,10 +42,10 @@ const Water = () => {
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         noValidate
         autoComplete="off">
-        <Typography  gutterBottom variant='h2' fontSize='2rem'>
+        <Typography  gutterBottom variant='h2' fontSize='2rem' fontWeight='400'>
         Water Goal: 100 oz
         </Typography>
-        <Typography  gutterBottom variant='h2' fontSize='2rem'>
+        <Typography  gutterBottom variant='h2' fontSize='2rem' fontWeight='300'>
         Hydration Status: {totalConsumed} oz
         </Typography>
         <TextField 

@@ -40,10 +40,10 @@ const Protein = () => {
         autoComplete="off"
         sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
         >
-        <Typography  gutterBottom variant='h2' fontSize='2rem'>
+        <Typography  gutterBottom variant='h2' fontSize='2rem' fontWeight='400'>
         Protein Goal: {proteinGoal} oz
         </Typography>
-        <Typography gutterBottom variant='h2' fontSize='2rem'>
+        <Typography gutterBottom variant='h2' fontSize='2rem' fontWeight='300'>
           Total Protein Intake: {totalConsumed} oz
         </Typography>
         <TextField 
