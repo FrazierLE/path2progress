@@ -1,11 +1,12 @@
-// import React from 'react'
-// import { measurementsData } from './data'
 import { Line } from 'react-chartjs-2'
+import { Container } from '@mui/material'
+import ChoiceForm from './ChoiceForm'
 
 const LineGraph = ({ chartData }) => {
   return(
-    <div className='chart-container'>
-      <h2 style={{textAlign: 'center'}}>Measurements</h2>
+    <Container className='chart-container'>
+      <ChoiceForm />
+      {/* <h2 style={{textAlign: 'center'}}>Progress</h2> */}
       <Line 
         data={chartData}
         options={{
@@ -20,7 +21,7 @@ const LineGraph = ({ chartData }) => {
           }
         }}
       />
-    </div>
+    </Container>
   )
 }
 

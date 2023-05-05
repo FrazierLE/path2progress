@@ -8,6 +8,7 @@ import { CategoryScale } from "chart.js";
 Chart.register(CategoryScale)
 
 const MeasurementsContainer = () => {
+  const [choice, setChoice] = useState('')
   const [chartData, setChartData] = useState({
     labels: measurementsData.map((data) => data.date),
     datasets: [
@@ -20,7 +21,6 @@ const MeasurementsContainer = () => {
   return(
     <Container>
       <LineGraph chartData={chartData}/>
-      MEASUREMENTS CONTAINER
     </Container>
   )
 }
