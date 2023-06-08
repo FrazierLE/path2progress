@@ -55,9 +55,9 @@ const Steps = () => {
         onChange={e => setCurrentSteps(e.target.value)}
         />
         <Typography>
-          {(totalSteps > 0 && totalSteps < stepGoal) && <h3>You have {stepGoal-totalSteps} steps left to reach your goal.</h3>}
-          {(totalSteps > 0 && totalSteps === stepGoal) && <h3>Congrats, you have reached your step goal!</h3>}
-          {(totalSteps > 0 && totalSteps > stepGoal) && <h3>What a rockstar! You've exceeded your steps goal.</h3>}
+          {(totalSteps > 0 && totalSteps < stepGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>You have {stepGoal-totalSteps} steps left to reach your goal.</h3>}
+          {(totalSteps > 0 && totalSteps === stepGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>Congrats, you have reached your step goal!</h3>}
+          {(totalSteps > 0 && totalSteps > stepGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>What a rockstar! You've exceeded your steps goal.</h3>}
         </Typography>
       <CardActions>
         <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>

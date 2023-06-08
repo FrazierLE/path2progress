@@ -59,9 +59,9 @@ const Water = () => {
           onChange={e => addWater(e)}
           />
           <Typography>
-          {(totalConsumed > 0 && totalConsumed < waterGoal) && <h3>You have {waterGoal-totalConsumed}oz of Water left to reach your goal. Drink up buttercup.</h3>}
-          {(totalConsumed > 0 && totalConsumed === waterGoal) && <h3>Congrats, you have reached your water goal! Way to stay hydrated!</h3>}
-          {(totalConsumed > 0 && totalConsumed > waterGoal) && <h3>Freaking Camel! You've exceeded your water intake goal.</h3>}
+          {(totalConsumed > 0 && totalConsumed < waterGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>You have {waterGoal-totalConsumed}oz of Water left to reach your goal. Drink up buttercup.</h3>}
+          {(totalConsumed > 0 && totalConsumed === waterGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>Congrats, you have reached your water goal! Way to stay hydrated!</h3>}
+          {(totalConsumed > 0 && totalConsumed > waterGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>Freaking Camel! You've exceeded your water intake goal.</h3>}
           </Typography>
           <CardActions>
           <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>

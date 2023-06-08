@@ -1,9 +1,15 @@
 import { Box, Typography, InputLabel, Select, MenuItem } from "@mui/material"
 import { useState } from "react"
 
-const ChoiceForm = () => {
-  const categories = ['Weight', 'Body Fat Percentage', 'Average Pinches']
-  const [category, setCategory] = useState('')
+const ChoiceForm = ({ chooseCategory }) => {
+  const categories = ['Weight', 'Body Fat Percentage', 'Total Pinches', 'All']
+  const [category, setCategory] = useState('Weight')
+
+  const selectCategory = (e) => {
+    chooseCategory(e.target.value)
+    setCategory(e.target.value)
+  }
+
   return(
     <Box>
       <InputLabel id='category-label'>Measurement Category</InputLabel>
@@ -12,10 +18,9 @@ const ChoiceForm = () => {
         id='category'
         label='category'
         value={category}
-        onChange={e => setCategory(e.target.value)}
+        onChange={selectCategory}
         sx={{width: 200}}
       >
-      <MenuItem value={'weight'}>Choose a category...</MenuItem>
       {categories.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
       </Select>
     </Box>

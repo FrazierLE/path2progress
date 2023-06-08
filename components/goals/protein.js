@@ -56,9 +56,9 @@ const Protein = () => {
           placeholder='Record Protein Intake'
           onChange={e => setCurrentProtein(e.target.value)}
           />
-        {(totalConsumed > 0 && totalConsumed < proteinGoal) && <h3>You have {proteinGoal-totalConsumed}g of Protein left to reach your goal.</h3>}
-        {(totalConsumed > 0 && totalConsumed === proteinGoal) && <h3>Congrats, you have reached your protein goal!</h3>}
-        {(totalConsumed > 0 && totalConsumed > proteinGoal) && <h3>What a rockstar! You've exceeded your protein goal.</h3>}
+        {(totalConsumed > 0 && totalConsumed < proteinGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>You have {proteinGoal-totalConsumed}g of Protein left to reach your goal.</h3>}
+        {(totalConsumed > 0 && totalConsumed === proteinGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>Congrats, you have reached your protein goal!</h3>}
+        {(totalConsumed > 0 && totalConsumed > proteinGoal) && <h3 style={{backgroundColor: 'rgb(48, 99, 186)', color: 'white', borderRadius: '5px', padding: '3px', textAlign: 'center'}}>What a rockstar! You've exceeded your protein goal.</h3>}
         <CardActions>
           <Button onClick={(e) => handleSubmit(e)} variant="contained">Calculate</Button>
         </CardActions>
